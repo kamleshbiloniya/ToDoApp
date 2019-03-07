@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title center text-center>
+      Hello World
+    </ion-title>
+    <ion-title center text-right>
+      <ion-icon (click)="addmessage()"style="color:green" ios="ios-add-circle" md="md-add-circle"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item-group>
+      <ion-grid style="border: 2px solid;" *ngFor="let item of data;let i = index;">
+        <ion-row style="color:black;font-size:27px;">
+          {{data[i].title}}
+        </ion-row>
+        <ion-row>
+          <ion-col col-1>
+            By
+          </ion-col>
+          <ion-col col-11>
+           [ {{data[i].name}} ]
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            {{data[i].date}}
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          {{data[i].msg}}
+        </ion-row>
+        <br>
+      </ion-grid>      
+    </ion-item-group>
+  </ion-list>
+</ion-content>
